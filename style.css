@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Ubuntu:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --base-size: min(3.2vh, 20px, 4.5vw);
+    --medium-size: min(3.5vh, 25px, 4.5vw);
+    --large-size: min(10.5vh, 80px, 15vw);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: rgb(206, 209, 214);
+    background: linear-gradient(54deg, rgba(206, 209, 214, 1) 0%, rgba(162, 161, 162, 1) 50%, rgba(206, 209, 214, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mobile-container {
+    width: 400px;
+    height: 800px;
+    max-width: 95%;
+    max-height: 80%;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px rgba(128, 128, 128, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 7%;
+    background-color: #3A4967;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.search {
+    /* border: 2px solid blue; */
+    background-color: #3A4967;
+    /* color: white; */
+    width: 100%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form {
+    width: 90%;
+}
+
+#search {
+    width: 100%;
+    font-size: 18px;
+    border-radius: 24px;
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    background-color: #3A4967;
+    color: white;
+    border: 2px solid grey;
+    transition: all 0.5s ease-in-out;
+}
+
+#search::placeholder {
+    font-size: 18px;
+    color: grey;
+    font-weight: 300;
+}
+
+#search:focus {
+    background-color: white;
+    color: black
+}
+
+.imageArea {
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 41%;
+    /* background: url("img/london.jpg"); */
+    overflow: hidden;
+    background-color: grey;
+    position: relative;
+}
+
+.imageArea img {
+    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    background: black;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.imageArea span {
+    color: white;
+    /* z-index: 3; */
+}
+
+#arrow {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#outer {
+    position: absolute;
+    top: 5%;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: var(--medium-size);
+
+}
+
+#location {
+    max-width: 77%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#currentTemp {
+    position: absolute;
+    top: 36%;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* font-size: 3rem; */
+    /* font-weight: 700; */
+    font-family: 'Ubuntu', sans-serif;
+    font-size: var(--large-size);
+}
+
+#currentWeather {
+    position: absolute;
+    top: 73%;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: var(--medium-size);
+}
+
+.contents {
+    /* border: 2px solid blue; */
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 45px;
+    font-size: var(--base-size);
+}
+
+.contents ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+li.days {
+    list-style: none;
+    display: flex;
+    padding: 5px 0px;
+    color: grey;
+}
+
+.leftPart {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li.days small {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin-left: 10px;
+}
+
+
+.favorites {
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6f7173;
+    color: white;
+    width: 100%;
+    height: 11%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.favorites:hover {
+    background-color: #363636;
+}
+
+.favorite-container {
+    position: absolute;
+    z-index: 7;
+    top: 9%;
+    background-color: white;
+    width: 100%;
+    height: 91%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    overflow-y: auto;
+    transform: translateY(101%);
+    transition: all 0.5s linear;
+}
+
+.favorite-container.active {
+    transform: translateY(0);
+}
+
+.favorite-container ul {
+    margin: 0;
+    padding: 0;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 0%;
+    cursor: pointer;
+    font-size: 20px;
+    right: 0%;
+    padding: 10px;
+}
+
+.fav-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 5px 10px;
+    padding: 0px 15px 10px;
+    border-bottom: 2px solid lightgrey;
+    color: darkgrey;
+}
+
+.fav-header {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.fav-name {
+    cursor: pointer;
+}
+
+.delete-fav-item {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #ff6348;
+    cursor: pointer;
+}
+
+@media only screen and (max-height :700px) {
+    .contents {
+        height: 42%;
+    }
+
+    .imageArea {
+        height: 34%;
+    }
+
+    .header {
+        font-size: 15px;
+    }
+
+    #search {
+        font-size: 15px;
+        padding: 2px 15px;
+        margin-bottom: 2%;
+    }
+
+    #search::placeholder {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-height :400px) {
+    .contents {
+        display: none;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .header,
+    .search {
+        height: 12%;
+    }
+
+    #search {
+        font-size: 18px;
+        padding: 5px 15px;
+    }
+
+    #search::placeholder {
+        font-size: 18px;
+    }
+
+    .imageArea {
+        height: 61%;
+    }
+
+    .favorites {
+        height: 15%;
+    }
+
+    #outer {
+        font-size: 22px;
+    }
+
+    #currentTemp {
+        font-size: 70px;
+    }
+
+    #currentWeather {
+        font-size: 18px;
+    }
+
+}
+
+@media only screen and (max-width :1000px) {
+    body {
+        align-items: flex-start;
+    }
+}

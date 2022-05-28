@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myWeather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Favicon links below -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <div class="mobile-container">
+        <div class="header">Weather App</div>
+        <div class="search">
+            <form action="" id="form">
+                <input type="text" id="search" placeholder="Search city" autocomplete="off">
+            </form>
+        </div>
+        <div class="favorite-container">
+            <div class="close"><i id="closeBtn" class="fa-solid fa-xmark"></i></div>
+            <span class="fav-header">Favourite cities: </span>
+            <ul class="fav-list">
+                <!-- <li class="fav-item">
+                    <span class="fav-name">Kolkata</span>
+                    <span class="delete">
+                        <button class="delete-fav-item" style="color:grey;font-size:10px;pointer-events:none"
+                            onclick="showWeather('Kolkata')">Default</button>
+                    </span>
+                </li> -->
+            </ul>
+        </div>
+        <div class="imageArea">
+            <img src="img/background5.jpg" alt="" id="weather-img">
+            <span id="arrow" title="View Favourites"><i class="fa-solid fa-angle-down"></i></span>
+            <span id="outer"><span id="location">London, England</span></span>
+            <span id="currentTemp">32&#xb0;</span>
+            <span id="currentWeather">Cloudy</span>
+        </div>
+        <div class="contents">
+            <ul>
+                <li class="days">
+                    <span class="leftPart">
+                        <span class="dayName">Sunday</span><span class="temp">20</span>
+                    </span>
+                    <small>Clouds</small>
+                </li>
+                <li class="days">
+                    <span class="leftPart">
+                        <span class="dayName">Monday</span><span class="temp">20</span>
+                    </span>
+                    <small>Rain</small>
+                </li>
+                <li class="days">
+                    <span class="leftPart">
+                        <span class="dayName">Tuesday</span><span class="temp">20</span>
+                    </span>
+                    <small>Rain</small>
+                </li>
+                <li class="days">
+                    <span class="leftPart">
+                        <span class="dayName">Wednesday</span><span class="temp">20</span>
+                    </span>
+                    <small>Clouds</small>
+                </li>
+                <li class="days">
+                    <span class="leftPart">
+                        <span class="dayName">Thursday</span><span class="temp">20</span>
+                    </span>
+                    <small>Clouds</small>
+                </li>
+            </ul>
+        </div>
+        <div class="favorites">+ Add Location to favourites</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
